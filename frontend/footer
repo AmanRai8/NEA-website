@@ -1,0 +1,22 @@
+<footer class="bg-dark py-3">
+  <div class="container">
+    <div class="row flex-center">
+      <div class="col text-center text-md-left text-white">
+        <p class="mb-0">
+          Copyright ©
+          <script>
+            document.write(new Date().getFullYear());
+          </script>
+          2025
+          <a class="text-white" href="http://www.nea.org.np"
+            >Nepal Electricity Authority</a
+          >
+          ❘ All Rights Reserved.
+        </p>
+      </div>
+      <!--<div class="col text-right text-md-left text-white">
+              <a target="_blank" href="https://play.google.com/store/apps/details?id=com.nepalelectricityauthority.nea&hl=en"><img class="img-fluid" src="https://www.nea.org.np/neanew\assets\images\android.png" alt="Android App" width="30" /></a>
+            </div>-->
+    </div>
+  </div>
+</footer>

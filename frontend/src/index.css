@@ -1,0 +1,66 @@
+@import "tailwindcss";
+/* :root {
+ 
+  --nea-primary: #003366; 
+  --nea-secondary: #f2a900; 
+  --nea-background: #ffffff; 
+  --nea-text: #111111; 
+
+  
+  --nea-dark-primary: #001f33; 
+  --nea-dark-secondary: #d4a900; 
+  --nea-dark-background: #0a0a0a; 
+  --nea-dark-text: #f5f5f5; 
+}
+
+.bg-nea-primary {
+  background-color: var(--nea-primary);
+}
+.text-nea-primary {
+  color: var(--nea-primary);
+}
+
+.bg-nea-secondary {
+  background-color: var(--nea-secondary);
+}
+.text-nea-secondary {
+  color: var(--nea-secondary);
+}
+
+.bg-nea-background {
+  background-color: var(--nea-background);
+}
+.text-nea-text {
+  color: var(--nea-text);
+}
+
+.dark .bg-nea-primary {
+  background-color: var(--nea-dark-primary);
+}
+.dark .text-nea-primary {
+  color: var(--nea-dark-primary);
+}
+
+.dark .bg-nea-secondary {
+  background-color: var(--nea-dark-secondary);
+}
+.dark .text-nea-secondary {
+  color: var(--nea-dark-secondary);
+}
+
+.dark .bg-nea-background {
+  background-color: var(--nea-dark-background);
+}
+.dark .text-nea-text {
+  color: var(--nea-dark-text);
+}
+
+body {
+  background-color: var(--nea-background);
+  color: var(--nea-text);
+}
+
+body.dark {
+  background-color: var(--nea-dark-background);
+  color: var(--nea-dark-text);
+} */
