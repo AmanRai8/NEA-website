@@ -12,9 +12,7 @@ const InBetweenSection = () => {
               key={index}
               src={src}
               alt={`Slide ${index + 1}`}
-              className="h-24 rounded"
-              height={500}
-              width={500}
+              className="h-40 w-300 rounded"
             />
           ))}
         </div>
