@@ -6,6 +6,8 @@ import Content1 from "./components/Content1";
 import Content2 from "./components/Content2";
 import InBetweenSection from "./components/InBetweenSection";
 import Content3 from "./components/Content3";
+import InBetweenSection2 from "./components/InBetweenSection2";
+import Content4 from "./components/Content4";
 
 const App = () => {
   return (
@@ -20,6 +22,11 @@ const App = () => {
       <InBetweenSection />
       <br />
       <Content3 />
+      <br />
+      <br />
+      <InBetweenSection2 />
+      <br />
+      <Content4 />
       {/* <main className="flex-grow">
         <div className="max-w-7xl mx-auto px-4 py-10 text-center">
           <h1 className="text-2xl font-bold">Welcome to NEA</h1>
