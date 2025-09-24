@@ -14,29 +14,14 @@ const App = () => {
     <div className="flex flex-col min-h-screen">
       <Header />
       <Navbar />
-      <Content1 />
-      <br />
-      <br />
-      <br />
-      <Content2 />
-      <InBetweenSection />
-      <br />
-      <Content3 />
-      <br />
-      <br />
-      <InBetweenSection2 />
-      <br />
-      <Content4 />
-      {/* <main className="flex-grow">
-        <div className="max-w-7xl mx-auto px-4 py-10 text-center">
-          <h1 className="text-2xl font-bold">Welcome to NEA</h1>
-          <p className="mt-2 text-gray-600">
-            Your content goes here. Add sections, components, or pages inside
-            this area.
-          </p>
-        </div>
-      </main> */}
-
+      <main className="flex-grow">
+        <Content1 className="my-8" />
+        <Content2 className="my-8" />
+        <InBetweenSection className="my-8" />
+        <Content3 className="my-8" />
+        <InBetweenSection2 className="my-8" />
+        <Content4 className="my-8" />
+      </main>
       <Footer />
     </div>
   );
