@@ -30,7 +30,7 @@ const Header = () => {
           className="flex items-center z-10 mb-2 md:mb-0"
         >
           <img
-            src="./nea-logo.png"
+            src="/nea-logo.png"
             alt="NEA"
             className="h-16 md:h-20 w-auto "
           />
