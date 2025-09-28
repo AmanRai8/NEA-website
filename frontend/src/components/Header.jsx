@@ -4,7 +4,7 @@ import { motion } from "framer-motion";
 const Header = () => {
   return (
     <motion.nav
-      initial={{ y: -80, opacity: 0 }}
+      initial={{ y: 0, opacity: 0 }}
       animate={{ y: 0, opacity: 1 }}
       transition={{ duration: 0.8, ease: "easeOut" }}
       className="relative bg-gradient-to-r from-[#0a1f44] via-[#123b70] to-[#0a1f44] shadow-lg py-3"
@@ -25,7 +25,7 @@ const Header = () => {
         {/* Logo */}
         <motion.a
           href="/"
-          whileHover={{ scale: 1.05, rotate: 1 }}
+          whileHover={{ scale: 1.05, rotate: 0 }}
           transition={{ type: "spring", stiffness: 200 }}
           className="flex items-center z-10 mb-2 md:mb-0"
         >
