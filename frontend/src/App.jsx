@@ -15,7 +15,7 @@ const App = () => {
       <Header />
       <Navbar />
       <main className="flex-grow">
-        <Content1 className="my-8" />
+        <Content1 className="mt-10" />
         <Content2 className="my-8" />
         <InBetweenSection className="my-8" />
         <Content3 className="my-8" />
