@@ -13,7 +13,7 @@ const Header = () => {
 
   return (
     <header
-      className={`sticky top-0 z-50 transition-all duration-300 ${
+      className={`top-0 z-50 transition-all duration-300 ${
         scrolled ? "shadow-lg" : "shadow-md"
       }`}
     >

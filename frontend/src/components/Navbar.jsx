@@ -333,10 +333,7 @@ const Navbar = () => {
         },
       ],
     },
-    {
-      name: "स्वत प्रकाशन",
-      href: "https://www.nea.org.np/monthlyUpdates",
-    },
+    { name: "स्वत प्रकाशन", href: "https://www.nea.org.np/monthlyUpdates" },
     {
       name: "Tarrif Rates",
       href: "#",
@@ -359,36 +356,47 @@ const Navbar = () => {
     },
   ];
 
+  // --- fix hover flicker using timers
+  let hoverTimeout = null;
+  const handleMouseEnter = (index) => {
+    clearTimeout(hoverTimeout);
+    setOpenDropdown(index);
+  };
+  const handleMouseLeave = () => {
+    hoverTimeout = setTimeout(() => setOpenDropdown(null), 200);
+  };
+
   return (
     <nav
-      className={`sticky top-0 z-30 transition-all duration-300 ${
+      className={`sticky top-0 z-40 transition-all duration-300 ${
         scrolled
-          ? "bg-blue-500/20 backdrop-blur-lg shadow-lg border-b border-gray-200"
-          : "bg-gradient-to-r from-blue-500/20 to-cyan-500/20 shadow-md"
+          ? "bg-[#D6E4FC] backdrop-blur-lg shadow-lg border-b border-gray-200"
+          : "bg-[#D6E4FC] shadow-md"
       }`}
     >
       <div className="container mx-auto px-4">
         {/* Desktop Menu */}
-        <div className="hidden lg:flex items-center justify-center py-3">
+        <div className="hidden lg:flex items-center justify-center py-3 relative">
           <div className="flex items-center space-x-1">
             {menuItems.map((item, index) => (
-              <div key={index} className="relative group">
+              <div
+                key={index}
+                className="relative group"
+                onMouseEnter={() => handleMouseEnter(index)}
+                onMouseLeave={handleMouseLeave}
+              >
                 <a
                   href={item.href}
                   target={item.href !== "#" ? "_blank" : undefined}
                   rel={item.href !== "#" ? "noopener noreferrer" : undefined}
-                  onMouseEnter={() => setOpenDropdown(index)}
-                  className={`
-                    flex items-center px-3 py-2 text-sm font-medium rounded-lg transition-all duration-200
-                    ${
-                      item.highlight
-                        ? "text-orange-600 hover:text-orange-700 hover:bg-orange-50"
-                        : "text-gray-700 hover:text-blue-600 hover:bg-blue-50"
-                    }
-                  `}
+                  className={`flex items-center px-3 py-2 text-sm font-medium rounded-lg transition-all duration-200 ${
+                    item.highlight
+                      ? "text-orange-600 hover:text-orange-700 hover:bg-orange-50"
+                      : "text-gray-700 hover:text-blue-600 hover:bg-blue-50"
+                  }`}
                 >
                   <span>{item.name}</span>
-                  {item.dropdown && item.dropdown.length > 0 && (
+                  {item.dropdown && (
                     <ChevronDown
                       className={`ml-1 w-4 h-4 transition-transform duration-200 ${
                         openDropdown === index ? "rotate-180" : ""
@@ -397,20 +405,14 @@ const Navbar = () => {
                   )}
                 </a>
 
-                {/* Desktop Dropdown */}
-                {item.dropdown && item.dropdown.length > 0 && (
+                {/* Dropdown */}
+                {item.dropdown && (
                   <div
-                    onMouseEnter={() => setOpenDropdown(index)}
-                    onMouseLeave={() => setOpenDropdown(null)}
-                    className={`
-                      absolute left-0 top-full mt-2 w-80 bg-white rounded-xl shadow-2xl border border-gray-200
-                      transition-all duration-200 origin-top
-                      ${
-                        openDropdown === index
-                          ? "opacity-100 visible scale-100"
-                          : "opacity-0 invisible scale-95 pointer-events-none"
-                      }
-                    `}
+                    className={`absolute left-0 top-full mt-2 w-80 bg-white rounded-xl shadow-2xl border border-gray-200 transition-all duration-200 ${
+                      openDropdown === index
+                        ? "opacity-100 visible translate-y-0"
+                        : "opacity-0 invisible -translate-y-2 pointer-events-none"
+                    }`}
                   >
                     <div className="py-2 max-h-96 overflow-y-auto scrollbar-thin scrollbar-thumb-gray-300 scrollbar-track-gray-100">
                       {item.dropdown.map((section, idx) => (
@@ -462,84 +464,63 @@ const Navbar = () => {
 
       {/* Mobile Menu */}
       <div
-        className={`
-          lg:hidden bg-white border-t border-gray-200
-          transition-all duration-300 ease-in-out overflow-hidden
-          ${isOpen ? "max-h-screen opacity-100" : "max-h-0 opacity-0"}
-        `}
+        className={`lg:hidden bg-white border-t border-gray-200 transition-all duration-300 ease-in-out overflow-hidden ${
+          isOpen ? "max-h-screen opacity-100" : "max-h-0 opacity-0"
+        }`}
       >
-        <div className="container mx-auto px-4 py-4 max-h-96 overflow-y-auto">
-          <div className="space-y-2">
-            {menuItems.map((item, index) => (
-              <div key={index}>
-                <a
-                  href={item.href}
-                  target={item.href !== "#" ? "_blank" : undefined}
-                  rel={item.href !== "#" ? "noopener noreferrer" : undefined}
-                  onClick={(e) => {
-                    if (item.dropdown && item.dropdown.length > 0) {
-                      e.preventDefault();
-                      setOpenDropdown(openDropdown === index ? null : index);
-                    }
-                  }}
-                  className={`
-                    flex items-center justify-between w-full px-4 py-3 rounded-lg text-sm font-medium
-                    transition-colors duration-200
-                    ${
-                      item.highlight
-                        ? "text-orange-600 bg-orange-50"
-                        : "text-gray-700 hover:bg-gray-100"
-                    }
-                  `}
-                >
-                  <span>{item.name}</span>
-                  {item.dropdown && item.dropdown.length > 0 && (
-                    <ChevronDown
-                      className={`w-4 h-4 transition-transform duration-200 ${
-                        openDropdown === index ? "rotate-180" : ""
-                      }`}
-                    />
-                  )}
-                </a>
-
-                {/* Mobile Dropdown */}
-                {item.dropdown && item.dropdown.length > 0 && (
-                  <div
-                    className={`
-                      ml-4 mt-2 space-y-2 overflow-hidden transition-all duration-300
-                      ${
-                        openDropdown === index
-                          ? "max-h-96 opacity-100"
-                          : "max-h-0 opacity-0"
-                      }
-                    `}
-                  >
-                    {item.dropdown.map((section, idx) => (
-                      <div
-                        key={idx}
-                        className="pl-4 border-l-2 border-blue-200"
-                      >
-                        <h6 className="font-semibold text-xs text-blue-600 mb-1">
-                          {section.title}
-                        </h6>
-                        {section.links.map((link, i) => (
-                          <a
-                            key={i}
-                            href={link.href}
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            className="block px-3 py-2 text-sm text-gray-600 hover:text-blue-600 hover:bg-blue-50 rounded transition-colors duration-150"
-                          >
-                            {link.name}
-                          </a>
-                        ))}
-                      </div>
-                    ))}
-                  </div>
+        <div className="container mx-auto px-4 py-4">
+          {menuItems.map((item, index) => (
+            <div key={index}>
+              <a
+                href={item.href}
+                onClick={(e) => {
+                  if (item.dropdown) {
+                    e.preventDefault();
+                    setOpenDropdown(openDropdown === index ? null : index);
+                  }
+                }}
+                className="flex justify-between items-center w-full px-4 py-3 rounded-lg text-sm font-medium text-gray-700 hover:bg-gray-100 transition-colors duration-200"
+              >
+                {item.name}
+                {item.dropdown && (
+                  <ChevronDown
+                    className={`w-4 h-4 transition-transform ${
+                      openDropdown === index ? "rotate-180" : ""
+                    }`}
+                  />
                 )}
-              </div>
-            ))}
-          </div>
+              </a>
+
+              {item.dropdown && (
+                <div
+                  className={`ml-4 overflow-hidden transition-all duration-300 ${
+                    openDropdown === index
+                      ? "max-h-96 opacity-100"
+                      : "max-h-0 opacity-0"
+                  }`}
+                >
+                  {item.dropdown.map((section, idx) => (
+                    <div key={idx} className="pl-4 border-l-2 border-blue-200">
+                      <h6 className="font-semibold text-xs text-blue-600 mb-1">
+                        {section.title}
+                      </h6>
+                      {section.links.map((link, i) => (
+                        <a
+                          key={i}
+                          href={link.href}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="block px-3 py-2 text-sm text-gray-600 hover:text-blue-600 hover:bg-blue-50 rounded"
+                        >
+                          {link.name}
+                        </a>
+                      ))}
+                    </div>
+                  ))}
+                </div>
+              )}
+            </div>
+          ))}
         </div>
       </div>
     </nav>
