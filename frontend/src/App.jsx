@@ -11,7 +11,7 @@ import Content4 from "./components/Content4";
 
 const App = () => {
   return (
-    <div className="flex flex-col min-h-screen">
+    <div className="flex flex-col min-h-screen bg-[#D6E4FC]">
       <Header />
       <Navbar />
       <main className="flex-grow">

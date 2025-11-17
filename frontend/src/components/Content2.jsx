@@ -115,19 +115,19 @@ const Content2 = () => {
   ];
 
   return (
-    <section className="py-0 pb-8">
-      <div className="container mx-auto px-4">
-        <div className="flex flex-wrap mt-6 -mx-4">
+    <section className="py-0 pb-8 bg-[#D6E4FC]">
+      <div className="container mx-auto px-4 ">
+        <div className="flex flex-wrap mt-6 -mx-4 ">
           {/* Left sidebar with officials */}
-          <div className="w-full lg:w-1/4 xl:w-1/4 px-4 mb-4 xl:mb-0">
+          <div className="w-full lg:w-1/4 xl:w-1/4 px-4 mb-4 xl:mb-0 ">
             {/* Managing Director */}
-            <div className="bg-white rounded-lg shadow-md mb-4">
-              <div className="bg-gray-50 px-4 py-3 border-b">
-                <h6 className="text-sm font-semibold text-center uppercase text-gray-700">
+            <div className="bg-[#D6E4FC] rounded-lg shadow-md mb-4">
+              <div className="bg-[#D6E4FC] px-4 py-3 border-b">
+                <h6 className="text-sm font-semibold text-center uppercase text-gray-700 ">
                   Managing Director
                 </h6>
               </div>
-              <div className="p-6 text-center h-full hover:shadow-lg transition-shadow">
+              <div className="p-6 text-center h-full hover:shadow-lg transition-shadow bg-[#D6E4FC]">
                 <img
                   src="/Hitendra.jpg"
                   alt="Managing Director"
@@ -154,12 +154,12 @@ const Content2 = () => {
           </div>
 
           {/* Main content area */}
-          <div className="w-full lg:w-3/4 px-4">
+          <div className="w-full lg:w-3/4 px-4 ">
             <div className="flex flex-wrap h-full -mx-2">
               {/* News section */}
-              <div className="w-full md:w-1/2 xl:w-2/3 px-2 mb-4 xl:mb-0">
-                <div className="bg-white rounded-lg shadow-md h-full">
-                  <div className="bg-gray-50 px-4 py-3 border-b">
+              <div className="w-full md:w-1/2 xl:w-2/3 px-2 mb-4 xl:mb-0 ">
+                <div className="bg-[#D6E4FC] rounded-lg shadow-md h-full">
+                  <div className="bg-[#D6E4FC] px-4 py-3 border-b">
                     <h6 className="text-sm font-semibold uppercase text-gray-700">
                       Latest news
                     </h6>
@@ -181,7 +181,7 @@ const Content2 = () => {
                       ))}
                     </ul>
                   </div>
-                  <div className="relative px-4 pt-4 border-t bg-gray-50">
+                  <div className="relative px-4 pt-4 border-t bg-[#D6E4FC]">
                     <a
                       href="https://www.nea.org.np/notice"
                       className="text-blue-600 hover:text-blue-800 flex items-center justify-center transition-colors"
