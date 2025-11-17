@@ -57,7 +57,7 @@ const annualPublications = [
 
 const Content4 = () => {
   return (
-    <section className="py-14">
+    <section className="py-14 bg-[#D6E4FC]">
       <div className="max-w-7xl mx-auto px-4">
         <div className="flex flex-col lg:flex-row gap-8">
           {/* Downloads */}

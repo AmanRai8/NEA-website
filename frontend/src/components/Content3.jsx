@@ -122,7 +122,7 @@ const Content3 = () => {
     : careerNotices.filter((notice) => notice.visible);
 
   return (
-    <section className="pt-0 pb-2">
+    <section className="pt-0 pb-2 bg-[#D6E4FC]   ">
       <div className="container mx-auto px-4">
         <div className="flex flex-wrap mt-6 -mx-4">
           {/* Left sidebar with additional officials */}
@@ -164,7 +164,7 @@ const Content3 = () => {
                         <div key={index}>
                           <nav aria-label="breadcrumb">
                             <ol className="list-none p-0 m-0">
-                              <li className="bg-gray-50 p-3 rounded">
+                              <li className="bg-[#D6E4FC] p-3 rounded">
                                 <a
                                   title={publication.title}
                                   className="text-blue-600 hover:text-blue-800 text-sm leading-relaxed transition-colors"

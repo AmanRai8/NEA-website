@@ -4,7 +4,7 @@ const images = ["/banner.jpg"];
 
 const InBetweenSection = () => {
   return (
-    <section className="py-6">
+    <section className="py-6 bg-[#D6E4FC]">
       <div className="container mx-auto h-full">
         <div className="overflow-hidden rounded flex justify-center">
           {images.map((src, index) => (
